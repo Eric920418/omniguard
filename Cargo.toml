@@ -1,0 +1,25 @@
+[package]
+name = "omniguard"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.88"
+description = "Self-hosted Rust I/O firewall for AI application traffic"
+publish = false
+
+[dependencies]
+axum = "0.7.9"
+base64 = "0.22"
+idna = "1.0"
+image = { version = "0.25.2", default-features = false, features = ["png"] }
+psl = "2.1"
+regex = "1"
+reqwest = { version = "0.12", default-features = false, features = ["json", "stream", "rustls-tls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "net", "sync", "time"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+url = "2"
+
+[dev-dependencies]
+tower = { version = "0.5", features = ["util"] }

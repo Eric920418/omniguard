@@ -1,0 +1,16 @@
+services:
+  omniguard:
+    build: .
+    ports:
+      - "127.0.0.1:7843:7843"
+    environment:
+      BIND: 0.0.0.0:7843
+      GATEWAY_TOKEN: ${GATEWAY_TOKEN:?Set GATEWAY_TOKEN before starting}
+      GMI_API_KEY: ${GMI_API_KEY:-}
+      GMI_BASE_URL: ${GMI_BASE_URL:-https://api.gmi-serving.com}
+      SEMANTIC_MODEL: ${SEMANTIC_MODEL:-deepseek-ai/DeepSeek-V4.1-Flash}
+      VISION_API_KEY: ${VISION_API_KEY:-}
+      VISION_BASE_URL: ${VISION_BASE_URL:-}
+      VISION_MODEL: ${VISION_MODEL:-}
+      UPSTREAM_API_KEY: ${UPSTREAM_API_KEY:-}
+      UPSTREAM_BASE_URL: ${UPSTREAM_BASE_URL:-https://api.gmi-serving.com}
